@@ -27,3 +27,22 @@ long book_id = book_id = jsonBook.getInt(BOOK_ID); //  because I used getInt, i 
 
 
 5 I created new java class recycler item click listener OUTSIDE OF package! so it did not recognize it, if i left the file outside , i would need to access it with package_name.recyclerListener!
+
+
+6 stupid error by me: i learned this bug:
+
+String method1(){
+.....
+return " " ;
+}
+String method2(){
+intermediate_string = method1();
+.....
+}
+
+public void boss_method(){
+    string s1 = method1();
+    string result = method2(s1);
+    //basically I just returned " " empty string instead of actual result i computed
+
+}
