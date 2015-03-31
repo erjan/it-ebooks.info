@@ -46,3 +46,8 @@ public void boss_method(){
     //basically I just returned " " empty string instead of actual result i computed
 
 }
+
+7 if you try to do http url connection outside of doIn background() it throws network on main thread exception
+
+i tried to do this in separate method isDataAvailable() inside ProcessData class. Now i see that this was duplicate code - i essentially do same work twice that I do in doinbackground()!
+so - the point is to move this code into doinbackg-d() and introduce another state variable isdataAvailable -not the whole method!
