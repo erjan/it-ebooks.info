@@ -51,3 +51,15 @@ public void boss_method(){
 
 i tried to do this in separate method isDataAvailable() inside ProcessData class. Now i see that this was duplicate code - i essentially do same work twice that I do in doinbackground()!
 so - the point is to move this code into doinbackg-d() and introduce another state variable isdataAvailable -not the whole method!
+
+
+8. another thing learned: 
+boolean inner_x ;
+public data( boolean inner_x){
+inner_x = true ;//this does not work because: i assign the argument again to true , not the actual inner x to true!
+}
+
+must use this keyword:
+public data(boolean inner_x){
+this.inner_x = inner_x ;
+} tip: focus on a variable and IDE will highlight where it is used - i see that it is not used at all! 
